@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+<div class="row">
+
+{% if tag.id %}
+<h1>Редагувати тег</h1>
+{% else %}
+<h1>Додати тег</h1>
+{% endif %}
+
+<form action="{{ action }}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  <input id="save_tag" type="submit" value="Зберегти" />
+</form>
+
+{% if tag.id %}
+  <a href="{% url 'tag-delete' pk=tag.id %}">Видалити</a>
+{% endif %}
+
+<a href="{% url 'tags-list' %}">Назад до списку тегів</a>
+
+</div>
+  </div>
+{% endblock %}

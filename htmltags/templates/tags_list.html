@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+<div class="row">
+<h1>HTML ТЕГИ</h1>
+
+<ul>
+  {% for tag in object_list %}
+    <li class="tag">{{ tag }}
+      (<a href="{% url 'tag-edit' pk=tag.id %}">edit</a>)
+    </li>
+  {% endfor %}
+</ul>
+
+
+<a href="{% url 'tags-new' %}">Додати Тег</a>
+  </div>
+  </div>
+{% endblock %}
