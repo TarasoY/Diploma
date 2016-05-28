@@ -25,9 +25,9 @@ urlpatterns = patterns('',
         name='tag-edit', ),
     url(r'^settings/delete/(?P<pk>\d+)/$', htmltags.views.DeleteTagView.as_view(),
         name='tag-delete', ),
-    url(r'^main$', htmltags.views.MainTagsView.as_view(),
+    url(r'^$', htmltags.views.MainTagsView.as_view(),
         name='tags'),
-    url(r'^main/details/(?P<pk>\d+)/$', htmltags.views.MainDetailsTagsView.as_view(),
+    url(r'^details/(?P<pk>\d+)/$', htmltags.views.MainDetailsTagsView.as_view(),
         name='tags-details'),
 
 )
